@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import BooksPage from "./containers/BooksPage";
+import BooksPage from "./containers/BooksPage/BooksPage";
 import Header from "./containers/Header/Header";
 import Homepage from "./containers/Homepage/Homepage";
 import { BooksProvider } from "./data/BooksContext";
