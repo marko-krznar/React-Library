@@ -25,10 +25,25 @@ h1 {
 h2 {
   font-size: 2rem;
 }
-p {
+ul {
+  list-style: disc;
+  margin-left: 1.25rem;
+}
+p,
+li {
   font-size: 1rem;
   margin-bottom: 1rem;
   color: rgba(255, 255, 255, 0.6);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
+}
+.headline {
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 2rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 1rem 0 1.5rem;
+  }
 }

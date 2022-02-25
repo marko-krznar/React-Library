@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./style.scss";
 
 export default function Homepage() {
   return (
-    <main className="pg--home">
-      <h2>Dobrodošli</h2>
+    <main className="page pg--home">
+      <h2 className="headline">Dobrodošli</h2>
       <p>Na ovoj stranici možete provjeriti sljedeće funkcionalnosti:</p>
       <ul>
         <li>Pregled knjiga u knjižnici</li>
@@ -20,9 +21,15 @@ export default function Homepage() {
           više knjiga istovremeno)
         </li>
       </ul>
-      <Link to="/knjige">Pogledaj knjige</Link>
-      <Link to="/korisnici">Pogledaj korisnike</Link>
-      <Link to="/posudene-knjige">Pogledaj posuđene knjige</Link>
+      <Link className="btn" to="/knjige">
+        Pogledaj knjige
+      </Link>
+      <Link className="btn" to="/korisnici">
+        Pogledaj korisnike
+      </Link>
+      <Link className="btn" to="/posudene-knjige">
+        Pogledaj posuđene knjige
+      </Link>
     </main>
   );
 }
