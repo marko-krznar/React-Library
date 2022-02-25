@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import BookItem from "../../components/BookItem";
+import BookItem from "../../components/BookItem/BookItem";
 import { BooksContext } from "../../data/BooksContext";
 
 export default function BooksPage() {
