@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Homepage() {
   return (
-    <main>
+    <main className="pg--home">
       <h2>Dobrodošli</h2>
       <p>Na ovoj stranici možete provjeriti sljedeće funkcionalnosti:</p>
       <ul>
