@@ -7,7 +7,7 @@ import { BooksProvider } from "./data/BooksContext";
 
 export default function App() {
   return (
-    <div>
+    <div className="d-flex flex-wrap">
       <BooksProvider>
         <Header />
         <Routes>
