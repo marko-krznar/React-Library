@@ -41,3 +41,27 @@ body {
   padding: 3rem;
   border-radius: 2rem;
 }
+table {
+  width: 100%;
+  border-spacing: 0;
+  thead {
+    background: #555454;
+  }
+  th,
+  td {
+    padding: 1rem 0;
+  }
+  tr {
+    td {
+      border-bottom: 1px solid #aaa9a9;
+    }
+    &:nth-child(even) {
+      background-color: rgba(252, 251, 251, 0.05);
+    }
+    &:last-child {
+      td {
+        border-bottom: none;
+      }
+    }
+  }
+}
