@@ -6,7 +6,6 @@ import "./style.scss";
 export default function BooksPage() {
   const { books, newName, newAuthor, addBook, name, author } =
     useContext(BooksContext);
-  console.log(books);
   return (
     <section className="page pg-books">
       <h2 className="headline">Knjige</h2>

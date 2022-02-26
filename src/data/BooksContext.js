@@ -58,7 +58,6 @@ export const BooksProvider = (props) => {
 
   const handleEditBook = (book) => {
     const bookId = book.id;
-    console.log(bookId, book.id);
     setBooks(
       books.map((book) =>
         book.id === bookId
