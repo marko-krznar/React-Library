@@ -47,3 +47,14 @@ li {
     margin: 1rem 0 1.5rem;
   }
 }
+input {
+  border: 1px solid #fff;
+  color: #fff;
+  margin-right: 0.5rem;
+  border-radius: 2rem;
+  padding: 0.875em 1em;
+  background: transparent;
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
