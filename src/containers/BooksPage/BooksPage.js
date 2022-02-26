@@ -1,28 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import BookItem from "../../components/BookItem/BookItem";
 import { BooksContext } from "../../data/BooksContext";
 import "./style.scss";
 
 export default function BooksPage() {
-  const [books, setBooks] = useContext(BooksContext);
-  const [name, setName] = useState("");
-  const [author, setAuthor] = useState("");
-
-  const updateName = (e) => {
-    setName(e.target.value);
-  };
-
-  const updateAuthor = (e) => {
-    setAuthor(e.target.value);
-  };
-
-  const addBook = (e) => {
-    e.preventDefault();
-    setBooks((prevBooks) => [...prevBooks, { name: name, author: author }]);
-    setName("");
-    setAuthor("");
-  };
-
+  const { books, newName, newAuthor, addBook, name, author } =
+    useContext(BooksContext);
   return (
     <section className="page pg-books">
       <h2 className="headline">Knjige</h2>
@@ -33,14 +16,14 @@ export default function BooksPage() {
             type="text"
             name="name"
             value={name}
-            onChange={updateName}
+            onChange={newName}
             placeholder="Naziv knjige"
           />
           <input
             type="text"
             name="author"
             value={author}
-            onChange={updateAuthor}
+            onChange={newAuthor}
             placeholder="Ime i prezime autora"
           />
           <button type="submit">Dodaj</button>
