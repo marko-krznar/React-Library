@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { UsersContext } from "../../data/UsersContext";
 
 export default function UserItem({ user }) {
+  const { users, setUsers, handleDeleteUser } = useContext(UsersContext);
+
   return (
     <tr className="block--book-item">
       <td>
@@ -12,7 +15,7 @@ export default function UserItem({ user }) {
         <Link to={`/korisnik`}>Ažuriraj</Link>
       </td>
       <td>
-        <button>Obriši</button>
+        <button onClick={() => handleDeleteUser(user)}>Obriši</button>
       </td>
     </tr>
   );
