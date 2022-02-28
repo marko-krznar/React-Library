@@ -62,6 +62,44 @@ export const UsersProvider = (props) => {
     setNewUserSurname("");
   };
 
+  // Edit
+
+  const [editUserName, setEditUserName] = useState("");
+  const [editUserSurname, setEditUserSurname] = useState("");
+  const [editUserBirth, setEditUserBirth] = useState("");
+
+  const handleEditUserName = (e) => {
+    setEditUserName(e.target.value);
+  };
+
+  const handleEditUserSurname = (e) => {
+    setEditUserSurname(e.target.value);
+  };
+
+  const handleEditBirth = (e) => {
+    setEditUserBirth(e.target.value);
+  };
+
+  const handleEditUser = (user) => {
+    const userId = user.id;
+    setUsers(
+      users.map((user) =>
+        user.id === userId
+          ? {
+              name: editUserName,
+              surname: editUserSurname,
+              id: userId,
+              birthDate: format(new Date(editUserBirth), "dd-MM-yyyy"),
+            }
+          : user
+      )
+    );
+    setNewUserName("");
+    setNewUserSurname("");
+  };
+
+  // end edit
+
   const value = {
     users,
     setUsers,
@@ -76,6 +114,13 @@ export const UsersProvider = (props) => {
     handleNewSurname,
     handleBirth,
     handleSubmit,
+    editUserName,
+    handleEditUserName,
+    editUserSurname,
+    handleEditUserSurname,
+    handleEditUser,
+    editUserBirth,
+    handleEditBirth,
   };
   return (
     <UsersContext.Provider value={value}>
