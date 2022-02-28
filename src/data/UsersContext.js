@@ -25,6 +25,10 @@ export const UsersProvider = (props) => {
     },
   ]);
 
+  const [newUserName, setNewUserName] = useState("");
+  const [newUserSurname, setNewUserSurname] = useState("");
+  const [newUserBirth, setNewUserBirth] = useState("");
+
   const handleDeleteUser = (user) => {
     const existUser = users.find((x) => x.id === user.id);
     if (existUser) {
@@ -32,7 +36,47 @@ export const UsersProvider = (props) => {
     }
   };
 
-  const value = { users, setUsers, handleDeleteUser };
+  const handleNewName = (e) => {
+    setNewUserName(e.target.value);
+  };
+
+  const handleNewSurname = (e) => {
+    setNewUserSurname(e.target.value);
+  };
+  const handleBirth = (e) => {
+    setNewUserBirth(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setUsers((prevUsers) => [
+      ...prevUsers,
+      {
+        name: newUserName,
+        surname: newUserSurname,
+        birthDate: format(new Date(newUserBirth), "dd-MM-yyyy"),
+        id: 4,
+      },
+    ]);
+    setNewUserName("");
+    setNewUserSurname("");
+  };
+
+  const value = {
+    users,
+    setUsers,
+    handleDeleteUser,
+    newUserName,
+    setNewUserName,
+    newUserSurname,
+    setNewUserSurname,
+    newUserBirth,
+    setNewUserBirth,
+    handleNewName,
+    handleNewSurname,
+    handleBirth,
+    handleSubmit,
+  };
   return (
     <UsersContext.Provider value={value}>
       {props.children}
