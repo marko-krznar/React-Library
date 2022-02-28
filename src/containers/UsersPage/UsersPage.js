@@ -1,39 +1,19 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import UserItem from "../../components/UserItem/UserItem";
 import { UsersContext } from "../../data/UsersContext";
 import { format } from "date-fns";
 
 export default function UsersPage() {
-  const { users, setUsers } = useContext(UsersContext);
-  const [newUserName, setNewUserName] = useState("");
-  const [newUserSurname, setNewUserSurname] = useState("");
-  const [newUserBirth, setNewUserBirth] = useState("");
-
-  const handleNewName = (e) => {
-    setNewUserName(e.target.value);
-  };
-
-  const handleNewSurname = (e) => {
-    setNewUserSurname(e.target.value);
-  };
-  const handleBirth = (e) => {
-    setNewUserBirth(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setUsers((prevUsers) => [
-      ...prevUsers,
-      {
-        name: newUserName,
-        surname: newUserSurname,
-        birthDate: format(new Date(newUserBirth), "dd-MM-yyyy"),
-        id: 4,
-      },
-    ]);
-    setNewUserName("");
-    setNewUserSurname("");
-  };
+  const {
+    users,
+    newUserName,
+    newUserSurname,
+    newUserBirth,
+    handleNewName,
+    handleNewSurname,
+    handleBirth,
+    handleSubmit,
+  } = useContext(UsersContext);
 
   return (
     <section className="page pg-users">
