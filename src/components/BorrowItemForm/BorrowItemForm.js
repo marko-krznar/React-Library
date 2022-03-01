@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { BooksContext } from "../../data/BooksContext";
 import { UsersContext } from "../../data/UsersContext";
 import { BorrowBooksContext } from "../../data/BorrowBooksContext";
@@ -6,28 +6,13 @@ import { BorrowBooksContext } from "../../data/BorrowBooksContext";
 export default function BorrowItemForm() {
   const { books } = useContext(BooksContext);
   const { users } = useContext(UsersContext);
-  const { setborrowBooks } = useContext(BorrowBooksContext);
-
-  const [borrowBook, setBorrowBook] = useState("");
-  const [borrowUser, setBorrowUser] = useState("");
-
-  const handleSelectBook = (e) => {
-    setBorrowBook(e.target.value);
-  };
-
-  const handleSelectUser = (e) => {
-    setBorrowUser(e.target.value);
-  };
-
-  const handleSelectedSubmit = (e) => {
-    e.preventDefault(e);
-    setborrowBooks((prevBorrowedBooks) => [
-      ...prevBorrowedBooks,
-      { bookName: borrowBook, userName: borrowUser, id: 4 },
-    ]);
-    setBorrowBook("");
-    setBorrowUser("");
-  };
+  const {
+    borrowBook,
+    borrowUser,
+    handleSelectBook,
+    handleSelectUser,
+    handleSelectedSubmit,
+  } = useContext(BorrowBooksContext);
 
   return (
     <section className="block--form-add">

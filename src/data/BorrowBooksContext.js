@@ -28,7 +28,35 @@ export function BorrowBooksProvider(props) {
     }
   };
 
-  const value = { borrowBooks, setborrowBooks, handleDelete };
+  const [borrowBook, setBorrowBook] = useState("");
+  const [borrowUser, setBorrowUser] = useState("");
+
+  const handleSelectBook = (e) => {
+    setBorrowBook(e.target.value);
+  };
+
+  const handleSelectUser = (e) => {
+    setBorrowUser(e.target.value);
+  };
+
+  const handleSelectedSubmit = (e) => {
+    e.preventDefault(e);
+    setborrowBooks((prevBorrowedBooks) => [
+      ...prevBorrowedBooks,
+      { bookName: borrowBook, userName: borrowUser, id: 4 },
+    ]);
+  };
+
+  const value = {
+    borrowBooks,
+    setborrowBooks,
+    handleDelete,
+    borrowBook,
+    borrowUser,
+    handleSelectBook,
+    handleSelectUser,
+    handleSelectedSubmit,
+  };
   return (
     <BorrowBooksContext.Provider value={value}>
       {props.children}
