@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import BorrowItem from "../../components/BorrowItem/BorrowItem";
+import BorrowItemForm from "../../components/BorrowItemForm/BorrowItemForm";
 import { BorrowBooksContext } from "../../data/BorrowBooksContext";
 
 export default function BorrowBookPage() {
@@ -7,6 +8,7 @@ export default function BorrowBookPage() {
   return (
     <section className="page pg-borrow-book">
       <h2 className="headline">Posuđene knjige</h2>
+      <BorrowItemForm />
       <table>
         <thead>
           <tr>
