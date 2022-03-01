@@ -3,7 +3,6 @@ import { BorrowBooksContext } from "../../data/BorrowBooksContext";
 
 export default function BorrowItem({ borrowed }) {
   const { handleDelete } = useContext(BorrowBooksContext);
-  console.log(borrowed);
 
   return (
     <tr>

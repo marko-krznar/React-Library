@@ -41,6 +41,7 @@ body {
   padding: 3rem;
   border-radius: 2rem;
 }
+
 table {
   width: 100%;
   border-spacing: 0;
@@ -64,4 +65,19 @@ table {
       }
     }
   }
+}
+
+.block--form-add {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+select {
+  background: transparent;
+  border: 1px solid #fff;
+  padding: 0.5em;
+  border-radius: 1rem;
+  margin-top: 0.5rem;
 }
