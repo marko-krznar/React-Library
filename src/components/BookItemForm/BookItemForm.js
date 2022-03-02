@@ -21,7 +21,16 @@ export default function BookItemForm() {
           onChange={newAuthor}
           placeholder="Ime i prezime autora"
         />
-        <button type="submit">Dodaj</button>
+        <button
+          className={
+            (newName.length && newAuthor.length) < 3
+              ? "is-disabled"
+              : "is-active"
+          }
+          type="submit"
+        >
+          Dodaj
+        </button>
       </form>
     </div>
   );
