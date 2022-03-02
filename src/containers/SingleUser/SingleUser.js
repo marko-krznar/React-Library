@@ -32,14 +32,14 @@ export default function SingleUser() {
             name="name"
             value={editUserName}
             onChange={handleEditUserName}
-            placeholder="Ime"
+            placeholder={singleUser.name}
           />
           <input
             type="text"
             name="author"
             value={editUserSurname}
             onChange={handleEditUserSurname}
-            placeholder="Prezime"
+            placeholder={singleUser.surname}
           />
           <input
             type="date"
