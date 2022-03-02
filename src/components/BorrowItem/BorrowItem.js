@@ -8,7 +8,7 @@ export default function BorrowItem({ borrowed }) {
     <tr>
       <td>{borrowed.bookName}</td>
       <td>{borrowed.userName}</td>
-      <td>
+      <td className="td--delete">
         <button onClick={() => handleDelete(borrowed)}>Obriši</button>
       </td>
     </tr>
