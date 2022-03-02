@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { UsersContext } from "../../data/UsersContext";
+import { useUsers } from "../../data/UsersContext";
 
 export default function UserItem({ user }) {
-  const { handleDeleteUser } = useContext(UsersContext);
+  const { handleDeleteUser } = useUsers();
 
   return (
     <tr className="block--book-item">

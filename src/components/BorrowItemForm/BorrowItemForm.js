@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useBooks } from "../../data/BooksContext";
-import { UsersContext } from "../../data/UsersContext";
+import { useUsers } from "../../data/UsersContext";
 import { useBorrowBook } from "../../data/BorrowBooksContext";
 
 export default function BorrowItemForm() {
   const { books } = useBooks();
-  const { users } = useContext(UsersContext);
+  const { users } = useUsers();
   const {
     borrowBook,
     borrowUser,

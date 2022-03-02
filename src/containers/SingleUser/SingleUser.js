@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
-import { UsersContext } from "../../data/UsersContext";
+import { useUsers } from "../../data/UsersContext";
 import { format } from "date-fns";
 
 export default function SingleUser() {
@@ -13,7 +13,7 @@ export default function SingleUser() {
     handleEditUser,
     editUserBirth,
     handleEditBirth,
-  } = useContext(UsersContext);
+  } = useUsers();
   const params = useParams();
   console.log(params);
 

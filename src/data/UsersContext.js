@@ -1,7 +1,10 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useContext } from "react";
 import { format } from "date-fns";
+import uniqid from "uniqid";
 
-export const UsersContext = createContext();
+const UsersContext = createContext();
+
+export const useUsers = () => useContext(UsersContext);
 
 export const UsersProvider = (props) => {
   const [users, setUsers] = useState([
@@ -9,19 +12,19 @@ export const UsersProvider = (props) => {
       name: "Darko",
       surname: "Darkić",
       birthDate: format(new Date(1995, 6, 2), "dd-MM-yyyy"),
-      id: 1,
+      id: uniqid(),
     },
     {
       name: "Marko",
       surname: "Markić",
       birthDate: format(new Date(1995, 6, 2), "dd-MM-yyyy"),
-      id: 2,
+      id: uniqid(),
     },
     {
       name: "Matko",
       surname: "Matkić",
       birthDate: format(new Date(1995, 6, 2), "dd-MM-yyyy"),
-      id: 3,
+      id: uniqid(),
     },
   ]);
 
@@ -55,7 +58,7 @@ export const UsersProvider = (props) => {
         name: newUserName,
         surname: newUserSurname,
         birthDate: format(new Date(newUserBirth), "dd-MM-yyyy"),
-        id: 4,
+        id: uniqid(),
       },
     ]);
     setNewUserName("");
