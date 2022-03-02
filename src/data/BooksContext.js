@@ -1,23 +1,26 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useContext } from "react";
+import uniqid from "uniqid";
 
-export const BooksContext = createContext();
+const BooksContext = createContext();
+
+export const useBooks = () => useContext(BooksContext);
 
 export const BooksProvider = (props) => {
   const [books, setBooks] = useState([
     {
       name: "Mali Princ",
       author: "Antoine De Saint- Exupery",
-      id: 1,
+      id: uniqid(),
     },
     {
       name: "Alkemičar",
       author: "Paulo Coelho",
-      id: 2,
+      id: uniqid(),
     },
     {
       name: "100 godina samoće",
       author: "Gabriel Garcia Marquez",
-      id: 3,
+      id: uniqid(),
     },
   ]);
 
@@ -36,15 +39,18 @@ export const BooksProvider = (props) => {
 
   const addBook = (e) => {
     e.preventDefault();
-    setBooks((prevBooks) => [...prevBooks, { name: name, author: author }]);
+    setBooks((prevBooks) => [
+      ...prevBooks,
+      { name: name, author: author, id: uniqid() },
+    ]);
     setName("");
     setAuthor("");
   };
 
   const deleteBook = (book) => {
-    const existBook = books.find((x) => x.name === book.name);
+    const existBook = books.find((x) => x.id === book.id);
     if (existBook) {
-      setBooks(books.filter((x) => x.name !== book.name));
+      setBooks(books.filter((x) => x.id !== book.id));
     }
   };
 
