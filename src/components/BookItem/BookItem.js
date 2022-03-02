@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useBooks } from "../../data/BooksContext";
-import "./style.scss";
 
 export default function BookItem({ book }) {
   const { deleteBook } = useBooks();
