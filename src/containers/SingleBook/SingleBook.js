@@ -17,7 +17,6 @@ export default function SingleBook() {
     const book = books[i];
     if (book.id == params.id) {
       let singleBook = book;
-      console.log(singleBook);
       return (
         <section>
           <h2>Knjiga</h2>
