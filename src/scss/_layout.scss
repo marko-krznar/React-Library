@@ -56,7 +56,8 @@ table {
   tr {
     td {
       border-bottom: 1px solid #aaa9a9;
-      &.td--delete {
+      &.td--delete,
+      &.td--edit {
         text-align: right;
       }
     }

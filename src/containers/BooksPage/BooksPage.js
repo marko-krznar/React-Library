@@ -2,7 +2,6 @@ import React from "react";
 import BookItem from "../../components/BookItem/BookItem";
 import BookItemForm from "../../components/BookItemForm/BookItemForm";
 import { useBooks } from "../../data/BooksContext";
-import "./style.scss";
 
 export default function BooksPage() {
   const { books } = useBooks();
@@ -13,10 +12,8 @@ export default function BooksPage() {
       <table>
         <thead>
           <tr>
-            <th>Naziv knjige</th>
-            <th>Autor knjige</th>
-            <th>Ažuriraj</th>
-            <th>Obriši</th>
+            <th colSpan={1}>Naziv knjige</th>
+            <th colSpan={3}>Autor knjige</th>
           </tr>
         </thead>
         <tbody>

@@ -9,10 +9,12 @@ export default function BookItem({ book }) {
     <tr className="block--book-item">
       <td>{book.name}</td>
       <td>{book.author}</td>
-      <td>
-        <Link to={`/knjiga/${book.id}`}>Ažuriraj</Link>
+      <td className="td--edit">
+        <Link className="btn" to={`/knjiga/${book.id}`}>
+          Ažuriraj
+        </Link>
       </td>
-      <td>
+      <td className="td--delete">
         <button onClick={() => deleteBook(book)}>Obriši</button>
       </td>
     </tr>
