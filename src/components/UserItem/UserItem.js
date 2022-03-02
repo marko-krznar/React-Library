@@ -11,10 +11,12 @@ export default function UserItem({ user }) {
         {user.name} {user.surname}
       </td>
       <td>{user.birthDate}</td>
-      <td>
-        <Link to={`/korisnik/${user.id}`}>Ažuriraj</Link>
+      <td className="td--edit">
+        <Link className="btn" to={`/korisnik/${user.id}`}>
+          Ažuriraj
+        </Link>
       </td>
-      <td>
+      <td className="td--delete">
         <button onClick={() => handleDeleteUser(user)}>Obriši</button>
       </td>
     </tr>
