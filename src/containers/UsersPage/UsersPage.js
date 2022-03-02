@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import UserItem from "../../components/UserItem/UserItem";
-import { UsersContext } from "../../data/UsersContext";
+import { useUsers } from "../../data/UsersContext";
 import { format } from "date-fns";
 
 export default function UsersPage() {
@@ -13,7 +13,7 @@ export default function UsersPage() {
     handleNewSurname,
     handleBirth,
     handleSubmit,
-  } = useContext(UsersContext);
+  } = useUsers();
 
   return (
     <section className="page pg-users">
