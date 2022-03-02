@@ -17,8 +17,8 @@ export default function BorrowBookPage() {
           </tr>
         </thead>
         <tbody>
-          {borrowBooks.map((borrowed, index) => (
-            <BorrowItem key={index} borrowed={borrowed} />
+          {borrowBooks.map((borrowed) => (
+            <BorrowItem key={borrowed.id} borrowed={borrowed} />
           ))}
         </tbody>
       </table>

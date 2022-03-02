@@ -2,6 +2,7 @@ import React, { useState, createContext, useContext } from "react";
 import uniqid from "uniqid";
 
 const BorrowBooksContext = createContext();
+
 export const useBorrowBook = () => useContext(BorrowBooksContext);
 
 export function BorrowBooksProvider(props) {
@@ -22,6 +23,8 @@ export function BorrowBooksProvider(props) {
       id: uniqid(),
     },
   ]);
+  const [borrowBook, setBorrowBook] = useState("");
+  const [borrowUser, setBorrowUser] = useState("");
 
   const handleDelete = (borrowed) => {
     const existBorrowed = borrowBooks.find((x) => x.id === borrowed.id);
@@ -29,9 +32,6 @@ export function BorrowBooksProvider(props) {
       setborrowBooks(borrowBooks.filter((x) => x.id !== borrowed.id));
     }
   };
-
-  const [borrowBook, setBorrowBook] = useState("");
-  const [borrowUser, setBorrowUser] = useState("");
 
   const handleSelectBook = (e) => {
     setBorrowBook(e.target.value);
@@ -59,6 +59,7 @@ export function BorrowBooksProvider(props) {
     handleSelectUser,
     handleSelectedSubmit,
   };
+
   return (
     <BorrowBooksContext.Provider value={value}>
       {props.children}

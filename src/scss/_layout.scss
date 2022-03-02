@@ -50,11 +50,15 @@ table {
   }
   th,
   td {
-    padding: 1rem 0;
+    padding: 1rem;
+    text-align: left;
   }
   tr {
     td {
       border-bottom: 1px solid #aaa9a9;
+      &.td--delete {
+        text-align: right;
+      }
     }
     &:nth-child(even) {
       background-color: rgba(252, 251, 251, 0.05);
