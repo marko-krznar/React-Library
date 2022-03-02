@@ -1,7 +1,9 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useContext } from "react";
 import uniqid from "uniqid";
 
-export const BooksContext = createContext();
+const BooksContext = createContext();
+
+export const useBooks = () => useContext(BooksContext);
 
 export const BooksProvider = (props) => {
   const [books, setBooks] = useState([

@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
-import { BooksContext } from "../../data/BooksContext";
+import React from "react";
+import { useBooks } from "../../data/BooksContext";
 
 export default function BookItemForm() {
-  const { newName, newAuthor, addBook, name, author } =
-    useContext(BooksContext);
+  const { newName, newAuthor, addBook, name, author } = useBooks();
   return (
     <div className="d-flex justify-content-between align-items-center block--form-add">
       <p>Dodaj novu knjigu</p>

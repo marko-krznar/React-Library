@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import BookItem from "../../components/BookItem/BookItem";
 import BookItemForm from "../../components/BookItemForm/BookItemForm";
-import { BooksContext } from "../../data/BooksContext";
+import { useBooks } from "../../data/BooksContext";
 import "./style.scss";
 
 export default function BooksPage() {
-  const { books } = useContext(BooksContext);
+  const { books } = useBooks();
   return (
     <section className="page pg-books">
       <h2 className="headline">Knjige</h2>

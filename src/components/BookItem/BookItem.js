@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { BooksContext } from "../../data/BooksContext";
+import { useBooks } from "../../data/BooksContext";
 import "./style.scss";
 
 export default function BookItem({ book }) {
-  const { deleteBook } = useContext(BooksContext);
+  const { deleteBook } = useBooks();
 
   return (
     <tr className="block--book-item">

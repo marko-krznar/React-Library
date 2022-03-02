@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
-import { BooksContext } from "../../data/BooksContext";
+import { useBooks } from "../../data/BooksContext";
 
 export default function SingleBook() {
   const {
@@ -10,7 +10,7 @@ export default function SingleBook() {
     handleEditName,
     handleEditAuthor,
     handleEditBook,
-  } = useContext(BooksContext);
+  } = useBooks();
   const params = useParams();
 
   for (let i = 0; i < books.length; i++) {
