@@ -15,7 +15,6 @@ export default function SingleUser() {
     handleEditBirth,
   } = useUsers();
   const params = useParams();
-  console.log(params);
 
   for (let i = 0; i < users.length; i++) {
     const user = users[i];

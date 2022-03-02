@@ -1,49 +1,15 @@
 import React from "react";
 import UserItem from "../../components/UserItem/UserItem";
 import { useUsers } from "../../data/UsersContext";
-import { format } from "date-fns";
+import UserItemForm from "../../components/UserItemForm/UserItemForm";
 
 export default function UsersPage() {
-  const {
-    users,
-    newUserName,
-    newUserSurname,
-    newUserBirth,
-    handleNewName,
-    handleNewSurname,
-    handleBirth,
-    handleSubmit,
-  } = useUsers();
+  const { users } = useUsers();
 
   return (
     <section className="page pg-users">
       <h2 className="headline">Korisnici</h2>
-      <div className="d-flex justify-content-between align-items-center block--add-book">
-        <p>Dodaj novog korisnika</p>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={newUserName}
-            onChange={handleNewName}
-            placeholder="Ime"
-          />
-          <input
-            type="text"
-            value={newUserSurname}
-            onChange={handleNewSurname}
-            placeholder="Prezime"
-          />
-          <input
-            type="date"
-            id="start"
-            name="birth"
-            value={newUserBirth}
-            max={format(new Date(), "yyyy-MM-dd")}
-            onChange={handleBirth}
-          ></input>
-          <button>Dodaj</button>
-        </form>
-      </div>
+      <UserItemForm />
       <table>
         <thead>
           <tr>
@@ -52,8 +18,8 @@ export default function UsersPage() {
           </tr>
         </thead>
         <tbody>
-          {users.map((user, index) => (
-            <UserItem key={index} user={user} />
+          {users.map((user) => (
+            <UserItem key={user.id} user={user} />
           ))}
         </tbody>
       </table>
