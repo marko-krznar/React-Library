@@ -36,7 +36,17 @@ export default function UserItemForm() {
           max={format(new Date(), "yyyy-MM-dd")}
           onChange={handleBirth}
         ></input>
-        <button>Dodaj</button>
+        <button
+          className={
+            (newUserName.length &&
+              newUserSurname.length &&
+              newUserBirth.length) < 3
+              ? "is-disabled"
+              : "is-active"
+          }
+        >
+          Dodaj
+        </button>
       </form>
     </div>
   );
