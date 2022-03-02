@@ -52,7 +52,16 @@ export default function BorrowItemForm() {
           </select>
         </div>
 
-        <button type="submit">Dodaj</button>
+        <button
+          className={
+            (borrowBook.length && borrowUser.length) < 3
+              ? "is-disabled"
+              : "is-active"
+          }
+          type="submit"
+        >
+          Dodaj
+        </button>
       </form>
     </section>
   );
