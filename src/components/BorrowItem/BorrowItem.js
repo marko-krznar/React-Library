@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import { BorrowBooksContext } from "../../data/BorrowBooksContext";
+import React from "react";
+import { useBorrowBook } from "../../data/BorrowBooksContext";
 
 export default function BorrowItem({ borrowed }) {
-  const { handleDelete } = useContext(BorrowBooksContext);
+  const { handleDelete } = useBorrowBook();
 
   return (
     <tr>

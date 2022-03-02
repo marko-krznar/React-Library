@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { BooksContext } from "../../data/BooksContext";
 import { UsersContext } from "../../data/UsersContext";
-import { BorrowBooksContext } from "../../data/BorrowBooksContext";
+import { useBorrowBook } from "../../data/BorrowBooksContext";
 
 export default function BorrowItemForm() {
   const { books } = useContext(BooksContext);
@@ -12,7 +12,7 @@ export default function BorrowItemForm() {
     handleSelectBook,
     handleSelectUser,
     handleSelectedSubmit,
-  } = useContext(BorrowBooksContext);
+  } = useBorrowBook();
 
   return (
     <section className="block--form-add">

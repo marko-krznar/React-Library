@@ -1,23 +1,25 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useContext } from "react";
+import uniqid from "uniqid";
 
-export const BorrowBooksContext = createContext();
+const BorrowBooksContext = createContext();
+export const useBorrowBook = () => useContext(BorrowBooksContext);
 
 export function BorrowBooksProvider(props) {
   const [borrowBooks, setborrowBooks] = useState([
     {
       bookName: "Mali Princ",
       userName: "Darko Darkić",
-      id: 1,
+      id: uniqid(),
     },
     {
       bookName: "Alkemičar",
       userName: "Marko Markić",
-      id: 2,
+      id: uniqid(),
     },
     {
       bookName: "100 godina samoće",
       userName: "Matko Matkić",
-      id: 3,
+      id: uniqid(),
     },
   ]);
 
@@ -43,7 +45,7 @@ export function BorrowBooksProvider(props) {
     e.preventDefault(e);
     setborrowBooks((prevBorrowedBooks) => [
       ...prevBorrowedBooks,
-      { bookName: borrowBook, userName: borrowUser, id: 4 },
+      { bookName: borrowBook, userName: borrowUser, id: uniqid() },
     ]);
   };
 
