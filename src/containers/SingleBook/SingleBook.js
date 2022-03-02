@@ -18,7 +18,7 @@ export default function SingleBook() {
     if (book.id == params.id) {
       let singleBook = book;
       return (
-        <section>
+        <section className="page pg-book">
           <h2>Knjiga</h2>
           <p>Nazi knjige: {singleBook.name}</p>
           <p>Ime autora: {singleBook.author}</p>
@@ -27,14 +27,14 @@ export default function SingleBook() {
             name="name"
             value={editName}
             onChange={handleEditName}
-            placeholder="Naziv knjige"
+            placeholder={singleBook.name}
           />
           <input
             type="text"
             name="author"
             value={editAuthor}
             onChange={handleEditAuthor}
-            placeholder="Ime i prezime autora"
+            placeholder={singleBook.author}
           />
           <button onClick={() => handleEditBook(book)}>Ažuriraj</button>
         </section>
