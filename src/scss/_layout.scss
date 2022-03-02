@@ -45,6 +45,8 @@ body {
 table {
   width: 100%;
   border-spacing: 0;
+  border-radius: 2rem;
+  overflow: hidden;
   thead {
     background: #555454;
   }
@@ -52,6 +54,9 @@ table {
   td {
     padding: 1rem;
     text-align: left;
+  }
+  th {
+    padding: 1.75rem 1rem;
   }
   tr {
     td {
