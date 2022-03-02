@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import { useBooks } from "../../data/BooksContext";
 
 export default function BookItem({ book }) {
@@ -20,3 +21,11 @@ export default function BookItem({ book }) {
     </tr>
   );
 }
+
+BookItem.propTypes = {
+  book: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string,
+    author: PropTypes.string,
+  }),
+};
