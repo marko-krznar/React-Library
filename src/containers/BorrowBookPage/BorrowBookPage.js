@@ -5,6 +5,7 @@ import { useBorrowBook } from "../../data/BorrowBooksContext";
 
 export default function BorrowBookPage() {
   const { borrowBooks } = useBorrowBook();
+
   return (
     <section className="page pg-borrow-book">
       <h2 className="headline">Posuđene knjige</h2>
@@ -13,7 +14,9 @@ export default function BorrowBookPage() {
         <thead>
           <tr>
             <th colSpan={1}>Knjiga</th>
-            <th colSpan={2}>Korisnik</th>
+            <th colSpan={1}>Korisnik</th>
+            <th colSpan={1}>Posuđeno</th>
+            <th colSpan={2}>Rok povratka</th>
           </tr>
         </thead>
         <tbody>
