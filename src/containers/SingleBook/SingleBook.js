@@ -17,7 +17,7 @@ export default function SingleBook() {
 
   for (let i = 0; i < books.length; i++) {
     const book = books[i];
-    if (book.id == params.id) {
+    if (book.id === params.id) {
       let singleBook = book;
       return (
         <section className="page pg-book">
@@ -45,7 +45,16 @@ export default function SingleBook() {
               onChange={handleEditAuthor}
               placeholder={singleBook.author}
             />
-            <button onClick={() => handleEditBook(book)}>Ažuriraj</button>
+            <button
+              className={
+                (editName.length && editAuthor.length) < 3
+                  ? "is-disabled"
+                  : "is-active"
+              }
+              onClick={() => handleEditBook(book)}
+            >
+              Ažuriraj
+            </button>
           </div>
         </section>
       );
