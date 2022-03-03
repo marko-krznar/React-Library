@@ -8,7 +8,6 @@ import { useUsers } from "../../data/UsersContext";
 
 export default function UserItem({ user }) {
   const { handleDeleteUser } = useUsers();
-  console.log(user);
   return (
     <tr className="block--book-item">
       <td>

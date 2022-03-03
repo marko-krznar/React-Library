@@ -48,6 +48,7 @@ export const UsersProvider = (props) => {
   };
   const handleBirth = (e) => {
     setNewUserBirth(e.target.value);
+    console.log(newUserBirth);
   };
 
   const handleSubmit = (e) => {
@@ -57,15 +58,13 @@ export const UsersProvider = (props) => {
       {
         name: newUserName,
         surname: newUserSurname,
-        birthDate: format(new Date(newUserBirth), "dd-MM-yyyy"),
+        birthDate: newUserBirth,
         id: uniqid(),
       },
     ]);
     setNewUserName("");
     setNewUserSurname("");
   };
-
-  // Edit
 
   const [editUserName, setEditUserName] = useState("");
   const [editUserSurname, setEditUserSurname] = useState("");
@@ -100,8 +99,6 @@ export const UsersProvider = (props) => {
     setNewUserName("");
     setNewUserSurname("");
   };
-
-  // end edit
 
   const value = {
     users,
