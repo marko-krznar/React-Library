@@ -48,7 +48,6 @@ export const UsersProvider = (props) => {
   };
   const handleBirth = (e) => {
     setNewUserBirth(e.target.value);
-    console.log(newUserBirth);
   };
 
   const handleSubmit = (e) => {
