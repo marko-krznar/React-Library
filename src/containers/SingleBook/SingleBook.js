@@ -1,6 +1,9 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+
+import { Link, useParams } from "react-router-dom";
+
 import { useBooks } from "../../data/BooksContext";
+import "./style.scss";
 
 export default function SingleBook() {
   const {
@@ -19,24 +22,32 @@ export default function SingleBook() {
       let singleBook = book;
       return (
         <section className="page pg-book">
-          <h2>Knjiga</h2>
-          <p>Nazi knjige: {singleBook.name}</p>
-          <p>Ime autora: {singleBook.author}</p>
-          <input
-            type="text"
-            name="name"
-            value={editName}
-            onChange={handleEditName}
-            placeholder={singleBook.name}
-          />
-          <input
-            type="text"
-            name="author"
-            value={editAuthor}
-            onChange={handleEditAuthor}
-            placeholder={singleBook.author}
-          />
-          <button onClick={() => handleEditBook(book)}>Ažuriraj</button>
+          <h2 className="headline">
+            {singleBook.name}
+            <Link to="/knjige">
+              <i className="bi bi-box-arrow-left"></i>
+            </Link>
+          </h2>
+          <p>Autor: {singleBook.author}</p>
+          <div className="d-flex direction-column block--form">
+            <label htmlFor="name">Novi naziv</label>
+            <input
+              type="text"
+              name="name"
+              value={editName}
+              onChange={handleEditName}
+              placeholder={singleBook.name}
+            />
+            <label htmlFor="author">Novi autor</label>
+            <input
+              type="text"
+              name="author"
+              value={editAuthor}
+              onChange={handleEditAuthor}
+              placeholder={singleBook.author}
+            />
+            <button onClick={() => handleEditBook(book)}>Ažuriraj</button>
+          </div>
         </section>
       );
     }

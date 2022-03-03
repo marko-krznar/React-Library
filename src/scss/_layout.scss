@@ -87,6 +87,16 @@ table {
   }
 }
 
+.block--form {
+  margin-top: 2rem;
+  label {
+    margin-bottom: 1rem;
+  }
+  input {
+    margin-bottom: 2rem;
+  }
+}
+
 select {
   background: transparent;
   border: 1px solid #fff;
