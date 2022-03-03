@@ -1,5 +1,7 @@
 import React from "react";
+
 import { Route, Routes } from "react-router-dom";
+
 import BooksPage from "./containers/BooksPage/BooksPage";
 import BorrowBookPage from "./containers/BorrowBookPage/BorrowBookPage";
 import Header from "./containers/Header/Header";
@@ -10,6 +12,7 @@ import UsersPage from "./containers/UsersPage/UsersPage";
 import { BooksProvider } from "./data/BooksContext";
 import { UsersProvider } from "./data/UsersContext";
 import { BorrowBooksProvider } from "./data/BorrowBooksContext";
+import NothingFoundPage from "./containers/NothingFoundPage/NothingFoundPage";
 
 export default function App() {
   return (
@@ -25,7 +28,7 @@ export default function App() {
               <Route path="/korisnici" element={<UsersPage />} />
               <Route path="/korisnik/:id" element={<SingleUser />} />
               <Route path="/posudene-knjige" element={<BorrowBookPage />} />
-              <Route path="/*" element={<BooksPage />} />
+              <Route path="/*" element={<NothingFoundPage />} />
             </Routes>
           </UsersProvider>
         </BooksProvider>
