@@ -1,7 +1,9 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import { useUsers } from "../../data/UsersContext";
+
+import { useParams, Link } from "react-router-dom";
 import { format } from "date-fns";
+
+import { useUsers } from "../../data/UsersContext";
 
 export default function SingleUser() {
   const {
@@ -22,34 +24,41 @@ export default function SingleUser() {
       let singleUser = user;
       return (
         <section className="page pg-user">
-          <h2>Korisnik</h2>
+          <h2 className="headline">
+            {singleUser.name} {singleUser.surname}
+            <Link to="/korisnici">
+              <i className="bi bi-box-arrow-left"></i>
+            </Link>
+          </h2>
           <p>
-            Ime i prezime: {singleUser.name} {singleUser.surname}
+            Datum rođenja:{" "}
+            {format(new Date(singleUser.birthDate), "dd.MM.yyyy.")}
           </p>
-          <p>Datum rođenja: {singleUser.birthDate}</p>
-          <input
-            type="text"
-            name="name"
-            value={editUserName}
-            onChange={handleEditUserName}
-            placeholder={singleUser.name}
-          />
-          <input
-            type="text"
-            name="author"
-            value={editUserSurname}
-            onChange={handleEditUserSurname}
-            placeholder={singleUser.surname}
-          />
-          <input
-            type="date"
-            id="start"
-            name="birth"
-            value={editUserBirth}
-            max={format(new Date(), "yyyy-MM-dd")}
-            onChange={handleEditBirth}
-          />
-          <button onClick={() => handleEditUser(user)}>Ažuriraj</button>
+          <div className="d-flex direction-column block--form">
+            <input
+              type="text"
+              name="name"
+              value={editUserName}
+              onChange={handleEditUserName}
+              placeholder={singleUser.name}
+            />
+            <input
+              type="text"
+              name="author"
+              value={editUserSurname}
+              onChange={handleEditUserSurname}
+              placeholder={singleUser.surname}
+            />
+            <input
+              type="date"
+              id="start"
+              name="birth"
+              value={editUserBirth}
+              max={format(new Date(), "yyyy-MM-dd")}
+              onChange={handleEditBirth}
+            />
+            <button onClick={() => handleEditUser(user)}>Ažuriraj</button>
+          </div>
         </section>
       );
     }
