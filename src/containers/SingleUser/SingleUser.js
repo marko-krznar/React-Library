@@ -20,7 +20,7 @@ export default function SingleUser() {
 
   for (let i = 0; i < users.length; i++) {
     const user = users[i];
-    if (user.id == params.id) {
+    if (user.id === params.id) {
       let singleUser = user;
       return (
         <section className="page pg-user">
@@ -57,7 +57,18 @@ export default function SingleUser() {
               max={format(new Date(), "yyyy-MM-dd")}
               onChange={handleEditBirth}
             />
-            <button onClick={() => handleEditUser(user)}>Ažuriraj</button>
+            <button
+              className={
+                (editUserName.length &&
+                  editUserSurname.length &&
+                  editUserBirth.length) < 3
+                  ? "is-disabled"
+                  : "is-active"
+              }
+              onClick={() => handleEditUser(user)}
+            >
+              Ažuriraj
+            </button>
           </div>
         </section>
       );

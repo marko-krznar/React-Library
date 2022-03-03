@@ -91,7 +91,7 @@ export const UsersProvider = (props) => {
               name: editUserName,
               surname: editUserSurname,
               id: userId,
-              birthDate: format(new Date(editUserBirth), "dd-MM-yyyy"),
+              birthDate: editUserBirth,
             }
           : user
       )
