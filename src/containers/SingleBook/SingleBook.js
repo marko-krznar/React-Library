@@ -3,7 +3,6 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 
 import { useBooks } from "../../data/BooksContext";
-import "./style.scss";
 
 export default function SingleBook() {
   const {
