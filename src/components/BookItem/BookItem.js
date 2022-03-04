@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { useBooks } from "../../data/BooksContext";
+import { useBooks } from "../../contexts/BooksContext";
 
 export default function BookItem({ book }) {
   const { deleteBook } = useBooks();

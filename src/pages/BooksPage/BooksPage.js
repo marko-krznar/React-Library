@@ -1,7 +1,7 @@
 import React from "react";
 import BookItem from "../../components/BookItem/BookItem";
 import BookItemForm from "../../components/BookItemForm/BookItemForm";
-import { useBooks } from "../../data/BooksContext";
+import { useBooks } from "../../contexts/BooksContext";
 
 export default function BooksPage() {
   const { books } = useBooks();
