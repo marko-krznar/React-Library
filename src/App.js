@@ -2,17 +2,17 @@ import React from "react";
 
 import { Route, Routes } from "react-router-dom";
 
-import BooksPage from "./containers/BooksPage/BooksPage";
-import BorrowBookPage from "./containers/BorrowBookPage/BorrowBookPage";
-import Header from "./containers/Header/Header";
-import Homepage from "./containers/Homepage/Homepage";
-import SingleBook from "./containers/SingleBook/SingleBook";
-import SingleUser from "./containers/SingleUser/SingleUser";
-import UsersPage from "./containers/UsersPage/UsersPage";
-import { BooksProvider } from "./data/BooksContext";
-import { UsersProvider } from "./data/UsersContext";
-import { BorrowBooksProvider } from "./data/BorrowBooksContext";
-import NothingFoundPage from "./containers/NothingFoundPage/NothingFoundPage";
+import BooksPage from "./pages/BooksPage/BooksPage";
+import BorrowBookPage from "./pages/BorrowBookPage/BorrowBookPage";
+import Header from "./pages/Header/Header";
+import Homepage from "./pages/Homepage/Homepage";
+import SingleBook from "./pages/SingleBook/SingleBook";
+import SingleUser from "./pages/SingleUser/SingleUser";
+import UsersPage from "./pages/UsersPage/UsersPage";
+import { BooksProvider } from "./contexts/BooksContext";
+import { UsersProvider } from "./contexts/UsersContext";
+import { BorrowBooksProvider } from "./contexts/BorrowBooksContext";
+import NothingFoundPage from "./pages/NothingFoundPage/NothingFoundPage";
 
 export default function App() {
   return (

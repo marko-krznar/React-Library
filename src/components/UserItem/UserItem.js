@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { format } from "date-fns";
 import PropTypes from "prop-types";
 
-import { useUsers } from "../../data/UsersContext";
+import { useUsers } from "../../contexts/UsersContext";
 
 export default function UserItem({ user }) {
   const { handleDeleteUser } = useUsers();

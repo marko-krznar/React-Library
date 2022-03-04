@@ -1,6 +1,6 @@
 import React from "react";
 import UserItem from "../../components/UserItem/UserItem";
-import { useUsers } from "../../data/UsersContext";
+import { useUsers } from "../../contexts/UsersContext";
 import UserItemForm from "../../components/UserItemForm/UserItemForm";
 
 export default function UsersPage() {

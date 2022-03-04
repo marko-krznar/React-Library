@@ -1,7 +1,7 @@
 import React from "react";
-import { useBooks } from "../../data/BooksContext";
-import { useUsers } from "../../data/UsersContext";
-import { useBorrowBook } from "../../data/BorrowBooksContext";
+import { useBooks } from "../../contexts/BooksContext";
+import { useUsers } from "../../contexts/UsersContext";
+import { useBorrowBook } from "../../contexts/BorrowBooksContext";
 
 export default function BorrowItemForm() {
   const { books } = useBooks();

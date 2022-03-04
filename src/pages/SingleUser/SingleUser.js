@@ -3,7 +3,7 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { format } from "date-fns";
 
-import { useUsers } from "../../data/UsersContext";
+import { useUsers } from "../../contexts/UsersContext";
 
 export default function SingleUser() {
   const {

@@ -2,7 +2,7 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
-import { useBorrowBook } from "../../data/BorrowBooksContext";
+import { useBorrowBook } from "../../contexts/BorrowBooksContext";
 
 export default function BorrowItem({ borrowed }) {
   const { handleDelete } = useBorrowBook();
