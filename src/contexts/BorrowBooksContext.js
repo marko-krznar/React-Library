@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext, useEffect } from "react";
 
 import uniqid from "uniqid";
 import { format, addDays } from "date-fns";
@@ -68,6 +68,17 @@ export function BorrowBooksProvider(props) {
       },
     ]);
   };
+
+  useEffect(() => {
+    const getBorrowBooks = JSON.parse(localStorage.getItem("borrowedBooks"));
+    if (getBorrowBooks) {
+      setborrowBooks(getBorrowBooks);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("borrowedBooks", JSON.stringify(borrowBooks));
+  }, [borrowBooks]);
 
   const value = {
     borrowBooks,
