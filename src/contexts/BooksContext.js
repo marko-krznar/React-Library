@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext, useEffect } from "react";
 import uniqid from "uniqid";
 
 const BooksContext = createContext();
@@ -74,6 +74,17 @@ export const BooksProvider = (props) => {
     setEditName("");
     setEditAuthor("");
   };
+
+  useEffect(() => {
+    const getBooks = JSON.parse(localStorage.getItem("books"));
+    if (getBooks) {
+      setBooks(getBooks);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("books", JSON.stringify(books));
+  }, [books]);
 
   const value = {
     books,
