@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 
 import BooksPage from "./pages/BooksPage/BooksPage";
 import BorrowBookPage from "./pages/BorrowBookPage/BorrowBookPage";
-import Header from "./pages/Header/Header";
+import Header from "./components/Header/Header";
 import Homepage from "./pages/Homepage/Homepage";
 import SingleBook from "./pages/SingleBook/SingleBook";
 import SingleUser from "./pages/SingleUser/SingleUser";
