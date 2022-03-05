@@ -104,3 +104,12 @@ select {
   border-radius: 1rem;
   margin-top: 0.5rem;
 }
+
+@media (max-width: 576px) {
+  body {
+    padding: 1rem;
+  }
+  .page {
+    padding: 2rem;
+  }
+}
