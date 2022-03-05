@@ -115,6 +115,9 @@ select {
       flex: 1 1;
       margin-bottom: 1rem;
     }
+    input {
+      margin-left: 0.5rem;
+    }
   }
   .block--table {
     overflow-x: scroll;
