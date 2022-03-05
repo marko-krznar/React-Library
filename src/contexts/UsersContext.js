@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext, useEffect } from "react";
 import { format } from "date-fns";
 import uniqid from "uniqid";
 
@@ -98,6 +98,17 @@ export const UsersProvider = (props) => {
     setNewUserName("");
     setNewUserSurname("");
   };
+
+  useEffect(() => {
+    const getUsers = JSON.parse(localStorage.getItem("users"));
+    if (getUsers) {
+      setUsers(getUsers);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("users", JSON.stringify(users));
+  }, [users]);
 
   const value = {
     users,
