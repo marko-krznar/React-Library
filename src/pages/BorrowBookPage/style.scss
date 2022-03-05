@@ -1,0 +1,36 @@
+.pg-borrow-book {
+  .block--form-add {
+    button {
+      margin-bottom: 0;
+      flex: 1 1;
+      min-width: 180px;
+    }
+    form {
+      > div {
+        flex: 1 1;
+        margin: 0 0.5rem 1rem;
+        min-width: 240px;
+      }
+    }
+  }
+}
+@media (max-width: 992px) {
+  .pg-borrow-book {
+    .block--form-add {
+      form {
+        > div {
+          margin: 0 0.5rem 1rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .pg-borrow-book {
+    .block--form-add {
+      button {
+        flex: 1 1 100%;
+      }
+    }
+  }
+}
