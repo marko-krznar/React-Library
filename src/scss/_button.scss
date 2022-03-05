@@ -27,3 +27,9 @@ button,
     opacity: 0.4;
   }
 }
+@media (max-width: 576px) {
+  button,
+  .btn {
+    width: 100%;
+  }
+}
