@@ -31,6 +31,9 @@ export const UsersProvider = (props) => {
   const [newUserName, setNewUserName] = useState("");
   const [newUserSurname, setNewUserSurname] = useState("");
   const [newUserBirth, setNewUserBirth] = useState("");
+  const [editUserName, setEditUserName] = useState("");
+  const [editUserSurname, setEditUserSurname] = useState("");
+  const [editUserBirth, setEditUserBirth] = useState("");
 
   const handleDeleteUser = (user) => {
     const existUser = users.find((x) => x.id === user.id);
@@ -71,9 +74,9 @@ export const UsersProvider = (props) => {
     setNewUserSurname("");
   };
 
-  const [editUserName, setEditUserName] = useState("");
-  const [editUserSurname, setEditUserSurname] = useState("");
-  const [editUserBirth, setEditUserBirth] = useState("");
+  const getCurrentUser = (id) => {
+    return users.filter((user) => user.id === id);
+  };
 
   const handleEditUserName = (e) => {
     setEditUserName(e.target.value);
@@ -139,6 +142,7 @@ export const UsersProvider = (props) => {
     handleEditUser,
     editUserBirth,
     handleEditBirth,
+    getCurrentUser,
   };
   return (
     <UsersContext.Provider value={value}>

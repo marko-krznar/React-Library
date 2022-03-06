@@ -7,7 +7,6 @@ import { useUsers } from "../../contexts/UsersContext";
 
 export default function SingleUser() {
   const {
-    users,
     editUserName,
     handleEditUserName,
     editUserSurname,
@@ -15,64 +14,56 @@ export default function SingleUser() {
     handleEditUser,
     editUserBirth,
     handleEditBirth,
+    getCurrentUser,
   } = useUsers();
   const params = useParams();
 
-  for (let i = 0; i < users.length; i++) {
-    const user = users[i];
-    if (user.id === params.id) {
-      let singleUser = user;
-      return (
-        <section className="page pg-user">
-          <h2 className="headline">
-            {singleUser.name} {singleUser.surname}
-            <Link to="/korisnici">
-              <i className="bi bi-box-arrow-left"></i>
-            </Link>
-          </h2>
-          <p>
-            Datum rođenja:{" "}
-            {format(new Date(singleUser.birthDate), "dd.MM.yyyy.")}
-          </p>
-          <div className="d-flex direction-column block--form">
-            <input
-              type="text"
-              name="name"
-              value={editUserName}
-              onChange={handleEditUserName}
-              placeholder={singleUser.name}
-            />
-            <input
-              type="text"
-              name="author"
-              value={editUserSurname}
-              onChange={handleEditUserSurname}
-              placeholder={singleUser.surname}
-            />
-            <input
-              type="date"
-              id="start"
-              name="birth"
-              value={editUserBirth}
-              max={format(new Date(), "yyyy-MM-dd")}
-              onChange={handleEditBirth}
-            />
-            <button
-              className={
-                (editUserName.length ||
-                  editUserSurname.length ||
-                  editUserBirth.length) < 3
-                  ? "is-disabled"
-                  : "is-active"
-              }
-              onClick={() => handleEditUser(user)}
-            >
-              Ažuriraj
-            </button>
-          </div>
-        </section>
-      );
-    }
-  }
-  return <></>;
+  const currentUser = getCurrentUser(params.id);
+
+  return (
+    <section className="page pg-user">
+      <h2 className="headline">
+        {currentUser[0]?.name} {currentUser[0]?.surname}
+        <Link to="/korisnici">
+          <i className="bi bi-box-arrow-left"></i>
+        </Link>
+      </h2>
+      <div className="d-flex direction-column block--form">
+        <input
+          type="text"
+          name="name"
+          value={editUserName}
+          onChange={handleEditUserName}
+          placeholder={currentUser[0]?.name}
+        />
+        <input
+          type="text"
+          name="author"
+          value={editUserSurname}
+          onChange={handleEditUserSurname}
+          placeholder={currentUser[0]?.surname}
+        />
+        <input
+          type="date"
+          id="start"
+          name="birth"
+          value={editUserBirth}
+          max={format(new Date(), "yyyy-MM-dd")}
+          onChange={handleEditBirth}
+        />
+        <button
+          className={
+            editUserName.length < 3 ||
+            editUserSurname.length < 3 ||
+            editUserBirth.length < 10
+              ? "is-disabled"
+              : "is-active"
+          }
+          onClick={() => handleEditUser(currentUser[0])}
+        >
+          Ažuriraj
+        </button>
+      </div>
+    </section>
+  );
 }
