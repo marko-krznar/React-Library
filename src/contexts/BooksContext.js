@@ -55,6 +55,10 @@ export const BooksProvider = (props) => {
     }
   };
 
+  const getCurrentBook = (id) => {
+    return books.filter((book) => book.id === id);
+  };
+
   const handleEditName = (e) => {
     setEditName(e.target.value);
   };
@@ -104,6 +108,7 @@ export const BooksProvider = (props) => {
     handleEditName,
     handleEditAuthor,
     handleEditBook,
+    getCurrentBook,
   };
 
   return (
