@@ -52,6 +52,12 @@ export const UsersProvider = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (
+      newUserName.length < 3 ||
+      newUserSurname.length < 3 ||
+      newUserBirth.length < 10
+    )
+      return;
     setUsers((prevUsers) => [
       ...prevUsers,
       {
