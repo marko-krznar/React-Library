@@ -39,6 +39,7 @@ export const BooksProvider = (props) => {
 
   const addBook = (e) => {
     e.preventDefault();
+    if (name.length < 3 || author.length < 3) return;
     setBooks((prevBooks) => [
       ...prevBooks,
       { name: name, author: author, id: uniqid() },
