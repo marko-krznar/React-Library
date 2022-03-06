@@ -59,8 +59,8 @@ export default function SingleUser() {
             />
             <button
               className={
-                (editUserName.length &&
-                  editUserSurname.length &&
+                (editUserName.length ||
+                  editUserSurname.length ||
                   editUserBirth.length) < 3
                   ? "is-disabled"
                   : "is-active"

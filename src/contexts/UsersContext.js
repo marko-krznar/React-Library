@@ -87,10 +87,12 @@ export const UsersProvider = (props) => {
       users.map((user) =>
         user.id === userId
           ? {
-              name: editUserName,
-              surname: editUserSurname,
+              name: editUserName.length > 3 ? editUserName : user.name,
+              surname:
+                editUserSurname.length > 3 ? editUserSurname : user.surname,
               id: userId,
-              birthDate: editUserBirth,
+              birthDate:
+                editUserBirth.length === 10 ? editUserBirth : user.birthDate,
             }
           : user
       )
