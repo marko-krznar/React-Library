@@ -29,6 +29,7 @@ export default function SingleUser() {
         </Link>
       </h2>
       <div className="d-flex direction-column block--form">
+        <label htmlFor="name">Novo ime</label>
         <input
           type="text"
           name="name"
@@ -36,13 +37,15 @@ export default function SingleUser() {
           onChange={handleEditUserName}
           placeholder={currentUser[0]?.name}
         />
+        <label htmlFor="surname">Novo prezime</label>
         <input
           type="text"
-          name="author"
+          name="surname"
           value={editUserSurname}
           onChange={handleEditUserSurname}
           placeholder={currentUser[0]?.surname}
         />
+        <label htmlFor="birth">Novi datum rođenja</label>
         <input
           type="date"
           id="start"
@@ -53,9 +56,9 @@ export default function SingleUser() {
         />
         <button
           className={
-            editUserName.length < 3 ||
-            editUserSurname.length < 3 ||
-            editUserBirth.length < 10
+            (editUserName.length ||
+              editUserSurname.length ||
+              editUserBirth.length) < 3
               ? "is-disabled"
               : "is-active"
           }
