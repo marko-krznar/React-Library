@@ -28,6 +28,9 @@ export default function BorrowItemForm() {
             id="book"
             onChange={handleSelectBook}
           >
+            <option value="placeholder" defaultValue hidden>
+              Odaberi
+            </option>
             {books.map((book) => (
               <option key={book.id} value={book.name}>
                 {book.name}
@@ -44,6 +47,10 @@ export default function BorrowItemForm() {
             id="user"
             onChange={handleSelectUser}
           >
+            <option value="placeholder" defaultValue hidden>
+              Odaberi
+            </option>
+
             {users.map((user) => (
               <option key={user.id} value={user.name + " " + user.surname}>
                 {user.name} {user.surname}
