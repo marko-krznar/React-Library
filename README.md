@@ -1,6 +1,6 @@
 # React - Library
 
-This project was created with [Create React App](https://github.com/facebook/create-react-app).
+Ovaj projekt je kreiran kroz [Create React App](https://github.com/facebook/create-react-app).
 
 ## Features
 
