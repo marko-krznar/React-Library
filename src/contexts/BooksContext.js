@@ -67,7 +67,11 @@ export const BooksProvider = (props) => {
     setBooks(
       books.map((book) =>
         book.id === bookId
-          ? { name: editName, author: editAuthor, id: bookId }
+          ? {
+              name: editName.length > 3 ? editName : book.name,
+              author: editAuthor.length > 3 ? editAuthor : book.author,
+              id: bookId,
+            }
           : book
       )
     );

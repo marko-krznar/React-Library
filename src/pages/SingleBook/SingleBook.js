@@ -47,7 +47,7 @@ export default function SingleBook() {
             />
             <button
               className={
-                (editName.length && editAuthor.length) < 3
+                (editName.length || editAuthor.length) < 3
                   ? "is-disabled"
                   : "is-active"
               }
