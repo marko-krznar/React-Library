@@ -9,7 +9,8 @@ export const useBorrowBook = () => useContext(BorrowBooksContext);
 
 export function BorrowBooksProvider(props) {
   const today = format(new Date(), "dd.MM.yyyy.");
-  const due = format(addDays(new Date(today), 30), "dd.MM.yyyy.");
+  const due = format(addDays(new Date(), 30), "dd.MM.yyyy.");
+
   const [borrowBooks, setborrowBooks] = useState([
     {
       bookName: "Mali Princ",
