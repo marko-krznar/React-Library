@@ -7,7 +7,7 @@ export default function BookItem({ book }) {
   const { deleteBook } = useBooks();
 
   return (
-    <tr className="block--book-item">
+    <>
       <td>{book.name}</td>
       <td>{book.author}</td>
       <td className="td--edit">
@@ -18,7 +18,7 @@ export default function BookItem({ book }) {
       <td className="td--delete">
         <button onClick={() => deleteBook(book)}>Obriši</button>
       </td>
-    </tr>
+    </>
   );
 }
 
