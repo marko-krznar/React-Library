@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 
+import { Link } from "react-router-dom";
+
 import BookItem from "../../components/BookItem/BookItem";
-import BookItemForm from "../../components/BookItemForm/BookItemForm";
+// import BookItemForm from "../../components/BookItemForm/BookItemForm";
 import { useBooks } from "../../contexts/BooksContext";
 
 import "./style.scss";
@@ -22,8 +24,14 @@ export default function BooksPage() {
 
   return (
     <section className="page pg-books">
-      <h2 className="headline">Knjige</h2>
-      <BookItemForm />
+      <div className="d-flex align-items-start">
+        <h2 className="headline">Knjige</h2>
+
+        <Link className="btn" to="/add-book">
+          Add new book
+        </Link>
+      </div>
+      {/* <BookItemForm /> */}
       <div className="block--search d-flex align-items-center justify-content-start">
         <span>Traži knjigu</span>
         <input type="text" value={term} onChange={handleSearchTerm} />

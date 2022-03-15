@@ -10,42 +10,45 @@ export const BooksProvider = (props) => {
     {
       name: "Mali Princ",
       author: "Antoine De Saint- Exupery",
+      qty: 4,
       id: uniqid(),
     },
     {
       name: "Alkemičar",
       author: "Paulo Coelho",
+      qty: 6,
       id: uniqid(),
     },
     {
       name: "100 godina samoće",
       author: "Gabriel Garcia Marquez",
+      qty: 7,
       id: uniqid(),
     },
   ]);
 
-  const [name, setName] = useState("");
-  const [author, setAuthor] = useState("");
+  const [newBook, setNewBook] = useState({
+    name: "",
+    author: "",
+    qty: 0,
+    id: uniqid(),
+  });
+
   const [editName, setEditName] = useState("");
   const [editAuthor, setEditAuthor] = useState("");
 
-  const newName = (e) => {
-    setName(e.target.value);
-  };
+  console.table(newBook);
 
-  const newAuthor = (e) => {
-    setAuthor(e.target.value);
-  };
-
-  const addBook = (e) => {
+  const handleNewBook = (e) => {
     e.preventDefault();
-    if (name.length < 3 || author.length < 3) return;
-    setBooks((prevBooks) => [
-      ...prevBooks,
-      { name: name, author: author, id: uniqid() },
-    ]);
-    setName("");
-    setAuthor("");
+    setBooks((prevBooks) => [...prevBooks, newBook]);
+    setNewBook((prevNewBook) => ({
+      ...prevNewBook,
+      name: "",
+      author: "",
+      qty: "",
+      id: uniqid(),
+    }));
   };
 
   const deleteBook = (book) => {
@@ -97,11 +100,9 @@ export const BooksProvider = (props) => {
 
   const value = {
     books,
-    newName,
-    newAuthor,
-    addBook,
-    name,
-    author,
+    newBook,
+    setNewBook,
+    handleNewBook,
     editName,
     editAuthor,
     deleteBook,
