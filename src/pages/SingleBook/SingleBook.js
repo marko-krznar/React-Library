@@ -19,12 +19,11 @@ export default function SingleBook() {
 
   return (
     <section className="page pg-book">
-      <h2 className="headline">
-        {currentBook[0]?.name}
-        <Link to="/knjige">
-          <i className="bi bi-box-arrow-left"></i>
-        </Link>
-      </h2>
+      <Link className="btn btn--back d-flex align-items-center" to="/knjige">
+        <i className="bi bi-box-arrow-left"></i>
+        <span>Back</span>
+      </Link>
+      <h2 className="headline">{currentBook[0]?.name}</h2>
       <p>Autor: {currentBook[0]?.author}</p>
       <div className="d-flex direction-column block--form">
         <label htmlFor="name">Novi naziv</label>
