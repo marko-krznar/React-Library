@@ -135,6 +135,12 @@ select {
     white-space: nowrap;
   }
 }
+.bi-x-circle-fill {
+  color: darkred;
+}
+.bi-check-circle-fill {
+  color: green;
+}
 @media (max-width: 576px) {
   body {
     padding: 1rem;
