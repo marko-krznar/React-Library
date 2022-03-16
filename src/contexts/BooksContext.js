@@ -36,12 +36,19 @@ export const BooksProvider = (props) => {
 
   const [editName, setEditName] = useState("");
   const [editAuthor, setEditAuthor] = useState("");
-
-  console.table(newBook);
+  const [succes, setSucces] = useState(false);
 
   const handleNewBook = (e) => {
     e.preventDefault();
+    if (
+      newBook.name.length <= 3 ||
+      newBook.author.length <= 3 ||
+      parseFloat(newBook.qty) < 1
+    ) {
+      return;
+    }
     setBooks((prevBooks) => [...prevBooks, newBook]);
+    setSucces(true);
     setNewBook((prevNewBook) => ({
       ...prevNewBook,
       name: "",
@@ -110,6 +117,7 @@ export const BooksProvider = (props) => {
     handleEditAuthor,
     handleEditBook,
     getCurrentBook,
+    succes,
   };
 
   return (
