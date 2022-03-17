@@ -9,7 +9,7 @@ import {
 } from "../../functions/inputValidator";
 
 export default function AddNewBook() {
-  const { newBook, setNewBook, handleNewBook, succes } = useBooks();
+  const { newBook, setNewBook, handleNewBook, success } = useBooks();
   const [inputName, setInputName] = useState(false);
   const [inputAuthor, setInputAuthor] = useState(false);
   const [inputQty, setInputQty] = useState(false);
@@ -94,8 +94,8 @@ export default function AddNewBook() {
         />
         <button type="submit">Add</button>
       </form>
-      {succes === true ? (
-        <p className="msg succes--msg">Book succesfully added</p>
+      {success === true ? (
+        <p className="msg success--msg">Book successfully added</p>
       ) : (
         <></>
       )}
