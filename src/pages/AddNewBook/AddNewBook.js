@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -13,6 +13,12 @@ export default function AddNewBook() {
   const [inputName, setInputName] = useState(false);
   const [inputAuthor, setInputAuthor] = useState(false);
   const [inputQty, setInputQty] = useState(false);
+
+  useEffect(() => {
+    handleInputTextValidation(newBook.name.length, setInputName);
+    handleInputTextValidation(newBook.author.length, setInputAuthor);
+    handleInputNumberValidation(newBook.qty, setInputQty);
+  }, [newBook.name, newBook.author, newBook.qty]);
 
   return (
     <section className="page pg-add-book">
@@ -43,9 +49,8 @@ export default function AddNewBook() {
           onChange={(e) => {
             setNewBook((prevName) => ({
               ...prevName,
-              name: e.target.value,
+              name: e.target.value.trim(),
             }));
-            handleInputTextValidation(newBook.name.length, setInputName);
           }}
         />
         <label htmlFor="author">
@@ -65,9 +70,8 @@ export default function AddNewBook() {
           onChange={(e) => {
             setNewBook((prevAuthor) => ({
               ...prevAuthor,
-              author: e.target.value,
+              author: e.target.value.trim(),
             }));
-            handleInputTextValidation(newBook.author.length, setInputAuthor);
           }}
         />
         <label htmlFor="qty">
@@ -89,7 +93,6 @@ export default function AddNewBook() {
               ...prevQty,
               qty: e.target.value,
             }));
-            handleInputNumberValidation(newBook.qty, setInputQty);
           }}
         />
         <button type="submit">Add</button>

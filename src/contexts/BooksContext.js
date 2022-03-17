@@ -98,10 +98,7 @@ export const BooksProvider = (props) => {
     if (success === false) {
       return;
     }
-    let message = setTimeout(() => setSuccess(false), 8000);
-    return () => {
-      clearTimeout(message);
-    };
+    setTimeout(() => setSuccess(false), 4000);
   }, [success]);
 
   useEffect(() => {
