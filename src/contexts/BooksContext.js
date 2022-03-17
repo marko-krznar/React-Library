@@ -53,7 +53,7 @@ export const BooksProvider = (props) => {
       ...prevNewBook,
       name: "",
       author: "",
-      qty: "",
+      qty: 0,
       id: uniqid(),
     }));
   };
@@ -93,6 +93,16 @@ export const BooksProvider = (props) => {
     setEditName("");
     setEditAuthor("");
   };
+
+  useEffect(() => {
+    if (succes === false) {
+      return;
+    }
+    let message = setTimeout(() => setSucces(false), 8000);
+    return () => {
+      clearTimeout(message);
+    };
+  }, [succes]);
 
   useEffect(() => {
     const getBooks = JSON.parse(localStorage.getItem("books"));
