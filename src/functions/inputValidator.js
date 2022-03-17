@@ -1,5 +1,5 @@
 export const handleInputTextValidation = (inputText, stateValidator) => {
-  if (inputText > 2) {
+  if (inputText > 3) {
     stateValidator(true);
   } else {
     stateValidator(false);
