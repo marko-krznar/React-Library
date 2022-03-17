@@ -3,29 +3,16 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { useBooks } from "../../contexts/BooksContext";
+import {
+  handleInputTextValidation,
+  handleInputNumberValidation,
+} from "../../functions/inputValidator";
 
 export default function AddNewBook() {
-  const { newBook, setNewBook, handleNewBook, succes } = useBooks();
+  const { newBook, setNewBook, handleNewBook, success } = useBooks();
   const [inputName, setInputName] = useState(false);
   const [inputAuthor, setInputAuthor] = useState(false);
   const [inputQty, setInputQty] = useState(false);
-
-  const handleNewBookName = (e) => {
-    setNewBook((prevName) => ({
-      ...prevName,
-      name: e.target.value,
-    }));
-    if (newBook.name.length > 2) {
-      // console.log("Name is equal or bigger than 3", newBook.name.length);
-      setInputName(true);
-    } else {
-      // console.log("Name is equal or smaller than 3", newBook.name.length);
-      setInputName(false);
-    }
-  };
-  // useEffect(() => {
-  //   console.log("useEffect", newBook.name.length);
-  // }, [newBook.name.length]);
 
   return (
     <section className="page pg-add-book">
@@ -53,7 +40,13 @@ export default function AddNewBook() {
           type="text"
           id="name"
           value={newBook.name}
-          onChange={handleNewBookName}
+          onChange={(e) => {
+            setNewBook((prevName) => ({
+              ...prevName,
+              name: e.target.value,
+            }));
+            handleInputTextValidation(newBook.name.length, setInputName);
+          }}
         />
         <label htmlFor="author">
           Author{" "}
@@ -74,11 +67,7 @@ export default function AddNewBook() {
               ...prevAuthor,
               author: e.target.value,
             }));
-            if (newBook.author.length > 2) {
-              setInputAuthor(true);
-            } else {
-              setInputAuthor(false);
-            }
+            handleInputTextValidation(newBook.author.length, setInputAuthor);
           }}
         />
         <label htmlFor="qty">
@@ -100,17 +89,13 @@ export default function AddNewBook() {
               ...prevQty,
               qty: e.target.value,
             }));
-            if (newBook.qty > 0) {
-              setInputQty(true);
-            } else {
-              setInputQty(false);
-            }
+            handleInputNumberValidation(newBook.qty, setInputQty);
           }}
         />
         <button type="submit">Add</button>
       </form>
-      {succes === true ? (
-        <p className="msg succes--msg">Book succesfully added</p>
+      {success === true ? (
+        <p className="msg success--msg">Book successfully added</p>
       ) : (
         <></>
       )}

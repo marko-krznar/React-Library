@@ -36,7 +36,7 @@ export const BooksProvider = (props) => {
 
   const [editName, setEditName] = useState("");
   const [editAuthor, setEditAuthor] = useState("");
-  const [succes, setSucces] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleNewBook = (e) => {
     e.preventDefault();
@@ -48,12 +48,12 @@ export const BooksProvider = (props) => {
       return;
     }
     setBooks((prevBooks) => [...prevBooks, newBook]);
-    setSucces(true);
+    setSuccess(true);
     setNewBook((prevNewBook) => ({
       ...prevNewBook,
       name: "",
       author: "",
-      qty: "",
+      qty: 0,
       id: uniqid(),
     }));
   };
@@ -95,6 +95,16 @@ export const BooksProvider = (props) => {
   };
 
   useEffect(() => {
+    if (success === false) {
+      return;
+    }
+    let message = setTimeout(() => setSuccess(false), 8000);
+    return () => {
+      clearTimeout(message);
+    };
+  }, [success]);
+
+  useEffect(() => {
     const getBooks = JSON.parse(localStorage.getItem("books"));
     if (getBooks) {
       setBooks(getBooks);
@@ -117,7 +127,7 @@ export const BooksProvider = (props) => {
     handleEditAuthor,
     handleEditBook,
     getCurrentBook,
-    succes,
+    success,
   };
 
   return (
