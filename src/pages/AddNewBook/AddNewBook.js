@@ -32,7 +32,7 @@ export default function AddNewBook() {
         className="d-flex direction-column block--form"
         onSubmit={handleNewBook}
       >
-        <label htmlFor="name">
+        <label className="d-flex flex-wrap" htmlFor="name">
           Name{" "}
           {inputName === true ? (
             <i className="bi bi-check-circle-fill"></i>
@@ -41,19 +41,19 @@ export default function AddNewBook() {
               <i className="bi bi-x-circle-fill"></i>{" "}
             </span>
           )}
+          <input
+            type="text"
+            id="name"
+            value={newBook.name}
+            onChange={(e) => {
+              setNewBook((prevName) => ({
+                ...prevName,
+                name: e.target.value.trim(),
+              }));
+            }}
+          />
         </label>
-        <input
-          type="text"
-          id="name"
-          value={newBook.name}
-          onChange={(e) => {
-            setNewBook((prevName) => ({
-              ...prevName,
-              name: e.target.value.trim(),
-            }));
-          }}
-        />
-        <label htmlFor="author">
+        <label className="d-flex flex-wrap" htmlFor="author">
           Author{" "}
           {inputAuthor === true ? (
             <i className="bi bi-check-circle-fill"></i>
@@ -62,19 +62,20 @@ export default function AddNewBook() {
               <i className="bi bi-x-circle-fill"></i>{" "}
             </span>
           )}
+          <input
+            type="text"
+            id="author"
+            value={newBook.author}
+            onChange={(e) => {
+              setNewBook((prevAuthor) => ({
+                ...prevAuthor,
+                author: e.target.value.trim(),
+              }));
+            }}
+          />
         </label>
-        <input
-          type="text"
-          id="author"
-          value={newBook.author}
-          onChange={(e) => {
-            setNewBook((prevAuthor) => ({
-              ...prevAuthor,
-              author: e.target.value.trim(),
-            }));
-          }}
-        />
-        <label htmlFor="qty">
+
+        <label className="d-flex flex-wrap" htmlFor="qty">
           Quantity{" "}
           {inputQty === true ? (
             <i className="bi bi-check-circle-fill"></i>
@@ -83,18 +84,20 @@ export default function AddNewBook() {
               <i className="bi bi-x-circle-fill"></i>{" "}
             </span>
           )}
+          <input
+            min="1"
+            max="15"
+            type="number"
+            id="qty"
+            value={newBook.qty}
+            onChange={(e) => {
+              setNewBook((prevQty) => ({
+                ...prevQty,
+                qty: e.target.value,
+              }));
+            }}
+          />
         </label>
-        <input
-          type="number"
-          id="qty"
-          value={newBook.qty}
-          onChange={(e) => {
-            setNewBook((prevQty) => ({
-              ...prevQty,
-              qty: e.target.value,
-            }));
-          }}
-        />
         <button type="submit">Add</button>
       </form>
       {success === true ? (
