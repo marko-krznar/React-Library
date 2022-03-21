@@ -93,8 +93,13 @@ table {
   label {
     margin-bottom: 1rem;
   }
+  i {
+    margin-left: 0.5rem;
+  }
   input {
     margin-bottom: 2rem;
+    flex: 1 1 100%;
+    margin-top: 1rem;
   }
 }
 
