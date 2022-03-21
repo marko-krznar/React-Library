@@ -16,11 +16,11 @@ export default function UserItem({ user }) {
       <td>{format(new Date(user.birthDate), "dd.MM.yyyy.")}</td>
       <td className="td--edit">
         <Link className="btn" to={`/korisnik/${user.id}`}>
-          Ažuriraj
+          Edit
         </Link>
       </td>
       <td className="td--delete">
-        <button onClick={() => handleDeleteUser(user)}>Obriši</button>
+        <button onClick={() => handleDeleteUser(user)}>Delete</button>
       </td>
     </tr>
   );

@@ -14,7 +14,7 @@ export default function UserItemForm() {
   } = useUsers();
   return (
     <div className="d-flex justify-content-between align-items-center block--form-add">
-      <p>Dodaj novog korisnika</p>
+      <p>Add novog korisnika</p>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -45,7 +45,7 @@ export default function UserItemForm() {
               : "is-active"
           }
         >
-          Dodaj
+          Add
         </button>
       </form>
     </div>

@@ -5,30 +5,24 @@ import "./style.scss";
 export default function Homepage() {
   return (
     <main className="page pg--home">
-      <h2 className="headline">Dobrodošli</h2>
-      <p>Na ovoj stranici možete provjeriti sljedeće funkcionalnosti:</p>
+      <h2 className="headline">Welcome</h2>
+      <p>On this page you can check the following functionalities:</p>
       <ul>
-        <li>Pregled knjiga u knjižnici</li>
-        <li>
-          Dodavanje novih knjiga i uređivanje postojećih (u knjižnici može biti
-          više knjiga istog naslova)
-        </li>
-        <li>Pregled korisnika knjižnice</li>
-        <li>Dodavanje novih korisnika i uređivanje postojećih</li>
-        <li>Pregled posuđenih knjiga</li>
-        <li>
-          Sučelje za posuđivanje i vraćanje knjiga (jedan korisnik može posuditi
-          više knjiga istovremeno)
-        </li>
+        <li>List of books in library</li>
+        <li>Adding new books and edit existing ones</li>
+        <li>List of librabry users</li>
+        <li>Adding new users and edit existing ones</li>
+        <li>List of borrowed books</li>
+        <li>Book lending and return interface</li>
       </ul>
-      <Link className="btn" to="/knjige">
-        Pogledaj knjige
+      <Link className="btn" to="/books">
+        Books
       </Link>
-      <Link className="btn" to="/korisnici">
-        Pogledaj korisnike
+      <Link className="btn" to="/users">
+        Users
       </Link>
-      <Link className="btn" to="/posudene-knjige">
-        Pogledaj posuđene knjige
+      <Link className="btn" to="/borrowed-books">
+        Borrowed books
       </Link>
     </main>
   );

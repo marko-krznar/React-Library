@@ -14,7 +14,7 @@ export default function BorrowItem({ borrowed }) {
       <td>{borrowed.dateCreated}</td>
       <td>{borrowed.dateDue}</td>
       <td className="td--delete">
-        <button onClick={() => handleDelete(borrowed)}>Obriši</button>
+        <button onClick={() => handleDelete(borrowed)}>Delete</button>
       </td>
     </tr>
   );

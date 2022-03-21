@@ -19,14 +19,14 @@ export default function SingleBook() {
 
   return (
     <section className="page pg-book">
-      <Link className="btn btn--back d-flex align-items-center" to="/knjige">
+      <Link className="btn btn--back d-flex align-items-center" to="/books">
         <i className="bi bi-box-arrow-left"></i>
         <span>Back</span>
       </Link>
       <h2 className="headline">{currentBook[0]?.name}</h2>
-      <p>Autor: {currentBook[0]?.author}</p>
+      <p>Author: {currentBook[0]?.author}</p>
       <div className="d-flex direction-column block--form">
-        <label htmlFor="name">Novi naziv</label>
+        <label htmlFor="name">New name</label>
         <input
           type="text"
           name="name"
@@ -34,7 +34,7 @@ export default function SingleBook() {
           onChange={handleEditName}
           placeholder={currentBook[0]?.name}
         />
-        <label htmlFor="author">Novi autor</label>
+        <label htmlFor="author">New author</label>
         <input
           type="text"
           name="author"
@@ -50,7 +50,7 @@ export default function SingleBook() {
           }
           onClick={() => handleEditBook(currentBook[0])}
         >
-          Ažuriraj
+          Edit
         </button>
       </div>
     </section>

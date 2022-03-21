@@ -24,12 +24,12 @@ export default function SingleUser() {
     <section className="page pg-user">
       <h2 className="headline">
         {currentUser[0]?.name} {currentUser[0]?.surname}
-        <Link to="/korisnici">
+        <Link to="/users">
           <i className="bi bi-box-arrow-left"></i>
         </Link>
       </h2>
       <div className="d-flex direction-column block--form">
-        <label htmlFor="name">Novo ime</label>
+        <label htmlFor="name">New name</label>
         <input
           type="text"
           name="name"
@@ -37,7 +37,7 @@ export default function SingleUser() {
           onChange={handleEditUserName}
           placeholder={currentUser[0]?.name}
         />
-        <label htmlFor="surname">Novo prezime</label>
+        <label htmlFor="surname">New surname</label>
         <input
           type="text"
           name="surname"
@@ -45,7 +45,7 @@ export default function SingleUser() {
           onChange={handleEditUserSurname}
           placeholder={currentUser[0]?.surname}
         />
-        <label htmlFor="birth">Novi datum rođenja</label>
+        <label htmlFor="birth">New birth date</label>
         <input
           type="date"
           id="start"
@@ -64,7 +64,7 @@ export default function SingleUser() {
           }
           onClick={() => handleEditUser(currentUser[0])}
         >
-          Ažuriraj
+          Edit
         </button>
       </div>
     </section>

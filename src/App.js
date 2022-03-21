@@ -24,12 +24,12 @@ export default function App() {
             <Header />
             <Routes>
               <Route path="/" element={<Homepage />} />
-              <Route path="/knjige" element={<BooksPage />} />
+              <Route path="/books" element={<BooksPage />} />
               <Route path="/add-book" element={<AddNewBook />} />
-              <Route path="/knjiga/:id" element={<SingleBook />} />
-              <Route path="/korisnici" element={<UsersPage />} />
+              <Route path="/book/:id" element={<SingleBook />} />
+              <Route path="/users" element={<UsersPage />} />
               <Route path="/korisnik/:id" element={<SingleUser />} />
-              <Route path="/posudene-knjige" element={<BorrowBookPage />} />
+              <Route path="/borrowed-books" element={<BorrowBookPage />} />
               <Route path="/*" element={<NothingFoundPage />} />
             </Routes>
           </UsersProvider>
