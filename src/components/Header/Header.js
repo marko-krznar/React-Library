@@ -5,19 +5,19 @@ import "./style.scss";
 export default function Header() {
   return (
     <section className="menu">
-      <h1>Knjižnica</h1>
+      <h1>Library</h1>
       <nav className="d-flex direction-column">
         <Link className="btn" to="/">
-          <i className="bi bi-house"></i> <span>Naslovna</span>
+          <i className="bi bi-house"></i> <span>Home</span>
         </Link>
-        <Link className="btn" to="/knjige">
-          <i className="bi bi-book"></i> <span>Knjige</span>
+        <Link className="btn" to="/books">
+          <i className="bi bi-book"></i> <span>Books</span>
         </Link>
-        <Link className="btn" to="/korisnici">
-          <i className="bi bi-person"></i> <span>Korisnici</span>
+        <Link className="btn" to="/users">
+          <i className="bi bi-person"></i> <span>Users</span>
         </Link>
-        <Link className="btn" to="/posudene-knjige">
-          <i className="bi bi-clipboard"></i> <span>Posuđene knjige</span>
+        <Link className="btn" to="/borrowed-books">
+          <i className="bi bi-clipboard"></i> <span>Borrowed books</span>
         </Link>
       </nav>
     </section>

@@ -11,16 +11,16 @@ export default function BorrowBookPage() {
 
   return (
     <section className="page pg-borrow-book">
-      <h2 className="headline">Posuđene knjige</h2>
+      <h2 className="headline">Borrowed-books</h2>
       <BorrowItemForm />
       <div className="block--table">
         <table>
           <thead>
             <tr>
-              <th colSpan={1}>Knjiga</th>
-              <th colSpan={1}>Korisnik</th>
-              <th colSpan={1}>Posuđeno</th>
-              <th colSpan={2}>Rok povratka</th>
+              <th colSpan={1}>Book</th>
+              <th colSpan={1}>User</th>
+              <th colSpan={1}>Borrowed</th>
+              <th colSpan={2}>Due date</th>
             </tr>
           </thead>
           <tbody>

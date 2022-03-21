@@ -21,7 +21,7 @@ export default function BorrowItemForm() {
         className="d-flex justify-content-between align-items-center"
       >
         <div className="d-flex direction-column">
-          <label htmlFor="book">Odaberi knjigu</label>
+          <label htmlFor="book">Pick a book</label>
           <select
             value={borrowBook}
             name="book"
@@ -29,7 +29,7 @@ export default function BorrowItemForm() {
             onChange={handleSelectBook}
           >
             <option value="placeholder" defaultValue hidden>
-              Odaberi
+              -
             </option>
             {books.map((book) => (
               <option key={book.id} value={book.name}>
@@ -40,7 +40,7 @@ export default function BorrowItemForm() {
         </div>
 
         <div className="d-flex direction-column">
-          <label htmlFor="user">Odaberi korisnika</label>
+          <label htmlFor="user">Pick a user</label>
           <select
             value={borrowUser}
             name="user"
@@ -48,7 +48,7 @@ export default function BorrowItemForm() {
             onChange={handleSelectUser}
           >
             <option value="placeholder" defaultValue hidden>
-              Odaberi
+              -
             </option>
 
             {users.map((user) => (
@@ -67,7 +67,7 @@ export default function BorrowItemForm() {
           }
           type="submit"
         >
-          Dodaj
+          Add
         </button>
       </form>
     </section>

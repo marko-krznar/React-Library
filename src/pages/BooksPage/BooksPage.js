@@ -25,7 +25,7 @@ export default function BooksPage() {
   return (
     <section className="page pg-books">
       <div className="d-flex align-items-start">
-        <h2 className="headline">Knjige</h2>
+        <h2 className="headline">Books</h2>
 
         <Link className="btn" to="/add-book">
           Add new book
@@ -33,23 +33,23 @@ export default function BooksPage() {
       </div>
       {/* <BookItemForm /> */}
       <div className="block--search d-flex align-items-center justify-content-start">
-        <span>Traži knjigu</span>
+        <span>Search book</span>
         <input type="text" value={term} onChange={handleSearchTerm} />
       </div>
       <div className="block--table">
         <table>
           <thead>
             <tr>
-              <th colSpan={1}>Naziv knjige</th>
-              <th colSpan={3}>Autor knjige</th>
+              <th colSpan={1}>Book</th>
+              <th colSpan={3}>Author</th>
             </tr>
           </thead>
           <tbody>
             {searchedBook.length === 0 ? (
               <tr>
                 <td colSpan={4}>
-                  Knjiga <span className="txt--underline">{term}</span> ne može
-                  se pronaći
+                  book <span className="txt--underline">{term}</span> ne može se
+                  pronaći
                 </td>
               </tr>
             ) : (

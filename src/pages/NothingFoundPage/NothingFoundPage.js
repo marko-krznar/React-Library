@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 export default function NothingFoundPage() {
   return (
     <section className="page pg-nothingfound">
-      <h2>Ups...Ova stranica ne postoji</h2>
+      <h2>OOoops...This page doesn't exist</h2>
       <p>
-        Vratite se natrag na{" "}
+        Go back to{" "}
         <Link className="btn" to="/">
-          Naslovnu
+          Home
         </Link>
       </p>
     </section>

@@ -22,7 +22,7 @@ export default function AddNewBook() {
 
   return (
     <section className="page pg-add-book">
-      <Link className="btn btn--back d-flex align-items-center" to="/knjige">
+      <Link className="btn btn--back d-flex align-items-center" to="/books">
         <i className="bi bi-box-arrow-left"></i>
         <span>Back</span>
       </Link>

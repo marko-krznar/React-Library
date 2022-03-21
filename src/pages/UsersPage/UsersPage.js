@@ -11,14 +11,14 @@ export default function UsersPage() {
 
   return (
     <section className="page pg-users">
-      <h2 className="headline">Korisnici</h2>
+      <h2 className="headline">Users</h2>
       <UserItemForm />
       <div className="block--table">
         <table>
           <thead>
             <tr>
-              <th colSpan={1}>Ime i prezime korisnika</th>
-              <th colSpan={3}>Datum rođenja</th>
+              <th colSpan={1}>Name and surname</th>
+              <th colSpan={3}>Date of birth</th>
             </tr>
           </thead>
           <tbody>
