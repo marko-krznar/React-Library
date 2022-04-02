@@ -28,9 +28,13 @@ export const UsersProvider = (props) => {
     },
   ]);
 
-  const [newUserName, setNewUserName] = useState("");
-  const [newUserSurname, setNewUserSurname] = useState("");
-  const [newUserBirth, setNewUserBirth] = useState("");
+  const [newUser, setNewUser] = useState({
+    name: "",
+    surname: "",
+    birthDate: "",
+    id: uniqid(),
+  });
+
   const [editUserName, setEditUserName] = useState("");
   const [editUserSurname, setEditUserSurname] = useState("");
   const [editUserBirth, setEditUserBirth] = useState("");
@@ -42,36 +46,10 @@ export const UsersProvider = (props) => {
     }
   };
 
-  const handleNewName = (e) => {
-    setNewUserName(e.target.value);
-  };
-
-  const handleNewSurname = (e) => {
-    setNewUserSurname(e.target.value);
-  };
-  const handleBirth = (e) => {
-    setNewUserBirth(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
+  const handleNewUser = (e) => {
     e.preventDefault();
-    if (
-      newUserName.length < 3 ||
-      newUserSurname.length < 3 ||
-      newUserBirth.length < 10
-    )
-      return;
-    setUsers((prevUsers) => [
-      ...prevUsers,
-      {
-        name: newUserName,
-        surname: newUserSurname,
-        birthDate: newUserBirth,
-        id: uniqid(),
-      },
-    ]);
-    setNewUserName("");
-    setNewUserSurname("");
+    setUsers((prevUsers) => [...prevUsers, newUser]);
+    setNewUser({ name: "", surname: "", birthDate: "", id: uniqid() });
   };
 
   const getCurrentUser = (id) => {
@@ -106,8 +84,6 @@ export const UsersProvider = (props) => {
           : user
       )
     );
-    setNewUserName("");
-    setNewUserSurname("");
   };
 
   useEffect(() => {
@@ -125,16 +101,9 @@ export const UsersProvider = (props) => {
     users,
     setUsers,
     handleDeleteUser,
-    newUserName,
-    setNewUserName,
-    newUserSurname,
-    setNewUserSurname,
-    newUserBirth,
-    setNewUserBirth,
-    handleNewName,
-    handleNewSurname,
-    handleBirth,
-    handleSubmit,
+    newUser,
+    setNewUser,
+    handleNewUser,
     editUserName,
     handleEditUserName,
     editUserSurname,

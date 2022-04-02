@@ -14,6 +14,7 @@ import { UsersProvider } from "./contexts/UsersContext";
 import { BorrowBooksProvider } from "./contexts/BorrowBooksContext";
 import NothingFoundPage from "./pages/NothingFoundPage/NothingFoundPage";
 import AddNewBook from "./pages/AddNewBook/AddNewBook";
+import AddUser from "./pages/AddUser/AddUser";
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
               <Route path="/add-book" element={<AddNewBook />} />
               <Route path="/book/:id" element={<SingleBook />} />
               <Route path="/users" element={<UsersPage />} />
+              <Route path="/add-user" element={<AddUser />} />
               <Route path="/korisnik/:id" element={<SingleUser />} />
               <Route path="/borrowed-books" element={<BorrowBookPage />} />
               <Route path="/*" element={<NothingFoundPage />} />
