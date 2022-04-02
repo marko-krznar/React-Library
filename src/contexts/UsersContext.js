@@ -48,6 +48,13 @@ export const UsersProvider = (props) => {
 
   const handleNewUser = (e) => {
     e.preventDefault();
+    if (
+      newUser.name.length <= 3 ||
+      newUser.surname.length <= 3 ||
+      newUser.birthDate.length !== 10
+    ) {
+      return;
+    }
     setUsers((prevUsers) => [...prevUsers, newUser]);
     setNewUser({ name: "", surname: "", birthDate: "", id: uniqid() });
   };

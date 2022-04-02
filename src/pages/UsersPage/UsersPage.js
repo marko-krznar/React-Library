@@ -2,7 +2,6 @@ import React from "react";
 
 import UserItem from "../../components/UserItem/UserItem";
 import { useUsers } from "../../contexts/UsersContext";
-import UserItemForm from "../../components/UserItemForm/UserItemForm";
 
 import "./style.scss";
 import { Link } from "react-router-dom";
@@ -18,7 +17,6 @@ export default function UsersPage() {
           Add new user
         </Link>
       </div>
-      {/* <UserItemForm /> */}
       <div className="block--table">
         <table>
           <thead>
