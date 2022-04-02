@@ -13,3 +13,11 @@ export const handleInputNumberValidation = (inputNumber, stateValidator) => {
     stateValidator(false);
   }
 };
+
+export const handleInputDateValidation = (inputDate, stateValidator) => {
+  if (inputDate === 10) {
+    stateValidator(true);
+  } else {
+    stateValidator(false);
+  }
+};
