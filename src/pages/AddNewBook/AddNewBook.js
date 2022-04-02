@@ -98,7 +98,18 @@ export default function AddNewBook() {
             }}
           />
         </label>
-        <button type="submit">Add</button>
+        <button
+          className={
+            newBook.name.length <= 3 ||
+            newBook.author.length <= 3 ||
+            parseFloat(newBook.qty) < 1
+              ? "is-disabled"
+              : ""
+          }
+          type="submit"
+        >
+          Add
+        </button>
       </form>
       {success === true ? (
         <p className="msg success--msg">Book successfully added</p>
