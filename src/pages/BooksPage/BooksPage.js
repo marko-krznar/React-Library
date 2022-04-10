@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import BookItem from "../../components/BookItem/BookItem";
-// import BookItemForm from "../../components/BookItemForm/BookItemForm";
 import { useBooks } from "../../contexts/BooksContext";
 
 import "./style.scss";
@@ -31,7 +30,6 @@ export default function BooksPage() {
           Add new book
         </Link>
       </div>
-      {/* <BookItemForm /> */}
       <div className="block--search d-flex align-items-center justify-content-start">
         <span>Search book</span>
         <input type="text" value={term} onChange={handleSearchTerm} />
@@ -41,15 +39,16 @@ export default function BooksPage() {
           <thead>
             <tr>
               <th colSpan={1}>Book</th>
-              <th colSpan={3}>Author</th>
+              <th colSpan={1}>Author</th>
+              <th colSpan={3}>Quantity</th>
             </tr>
           </thead>
           <tbody>
             {searchedBook.length === 0 ? (
               <tr>
                 <td colSpan={4}>
-                  book <span className="txt--underline">{term}</span> ne može se
-                  pronaći
+                  Book <span className="txt--underline">{term}</span> can't be
+                  find.
                 </td>
               </tr>
             ) : (

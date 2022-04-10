@@ -10,6 +10,7 @@ export default function BookItem({ book }) {
     <>
       <td>{book.name}</td>
       <td>{book.author}</td>
+      <td>{book.qty}</td>
       <td className="td--edit">
         <Link className="btn" to={`/book/${book.id}`}>
           Edit
