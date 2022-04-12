@@ -19,9 +19,9 @@ import AddUser from "./pages/AddUser/AddUser";
 export default function App() {
   return (
     <div className="d-flex flex-wrap">
-      <BorrowBooksProvider>
-        <BooksProvider>
-          <UsersProvider>
+      <BooksProvider>
+        <UsersProvider>
+          <BorrowBooksProvider>
             <Header />
             <Routes>
               <Route path="/" element={<Homepage />} />
@@ -34,9 +34,9 @@ export default function App() {
               <Route path="/borrowed-books" element={<BorrowBookPage />} />
               <Route path="/*" element={<NothingFoundPage />} />
             </Routes>
-          </UsersProvider>
-        </BooksProvider>
-      </BorrowBooksProvider>
+          </BorrowBooksProvider>
+        </UsersProvider>
+      </BooksProvider>
     </div>
   );
 }
