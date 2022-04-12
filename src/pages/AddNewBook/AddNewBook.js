@@ -15,8 +15,8 @@ export default function AddNewBook() {
   const [inputQty, setInputQty] = useState(false);
 
   useEffect(() => {
-    handleInputTextValidation(newBook.name.length, setInputName);
-    handleInputTextValidation(newBook.author.length, setInputAuthor);
+    handleInputTextValidation(newBook.name.trim().length, setInputName);
+    handleInputTextValidation(newBook.author.trim().length, setInputAuthor);
     handleInputNumberValidation(newBook.qty, setInputQty);
   }, [newBook.name, newBook.author, newBook.qty]);
 
@@ -48,7 +48,7 @@ export default function AddNewBook() {
             onChange={(e) => {
               setNewBook((prevName) => ({
                 ...prevName,
-                name: e.target.value.trim(),
+                name: e.target.value,
               }));
             }}
           />
@@ -69,7 +69,7 @@ export default function AddNewBook() {
             onChange={(e) => {
               setNewBook((prevAuthor) => ({
                 ...prevAuthor,
-                author: e.target.value.trim(),
+                author: e.target.value,
               }));
             }}
           />
