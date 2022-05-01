@@ -7,7 +7,7 @@ export default function Header() {
     <section className="menu">
       <h1>Library</h1>
       <nav className="d-flex direction-column">
-        <Link className="btn" to="/">
+        <Link className="btn" to="/React-Library">
           <i className="bi bi-house"></i> <span>Home</span>
         </Link>
         <Link className="btn" to="/books">

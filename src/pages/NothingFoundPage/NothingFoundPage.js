@@ -8,7 +8,7 @@ export default function NothingFoundPage() {
       <h2>OOoops...This page doesn't exist</h2>
       <p>
         Go back to{" "}
-        <Link className="btn" to="/">
+        <Link className="btn" to="/React-Library">
           Home
         </Link>
       </p>
